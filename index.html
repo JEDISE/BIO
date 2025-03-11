@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIOJEDISE</title> <!-- Переименовано в BIOJEDISE -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #2c003e; /* Темно-фиолетовый фон */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Фон с эффектом размытия, напоминающий небо */
+        .sky-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to bottom, #6a1f8f, #4a148c);
+            filter: blur(10px);
+            z-index: -1;
+        }
+
+        /* Стиль для текста "BIO JEDISE" */
+        .bio-text {
+            font-size: 6rem; /* Увеличен размер текста */
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            color: #2c003e;
+            z-index: 1;
+            text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.8); /* Темная тень для шрифта */
+            position: absolute;
+            top: 20px; /* Сдвигаем текст наверх */
+            width: 40%; /* Текст теперь занимает 40% ширины */
+            left: 30%; /* Центрируем текст по горизонтали */
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            z-index: 1;
+            width: 60%; /* Кнопки теперь занимают 60% ширины */
+            position: absolute;
+            bottom: 30px; /* Сдвигаем кнопки вниз */
+            left: 20%; /* Центрируем кнопки по горизонтали */
+        }
+
+        .left-buttons, .right-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        button {
+            background-color: #800080; /* Пурпурный фон */
+            color: #2c003e; /* Темный цвет для текста */
+            border: 2px solid transparent;
+            font-size: 5.5rem; /* Увеличен размер шрифта */
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace; /* Гламурный, современный шрифт */
+            border-radius: 15px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            width: 100%; /* Сделали все кнопки одинакового размера */
+            height: 240px; /* Увеличена высота кнопок в 4 раза */
+            max-width: 800px; /* Максимальная ширина для кнопок */
+            text-align: center;
+            line-height: 1.5; /* Позволяет тексту переноситься */
+            white-space: normal; /* Разрешаем перенос текста */
+            word-wrap: break-word; /* Переносим слова, если текст длинный */
+            padding: 10px; /* Отступы внутри кнопок */
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #993366; /* Немного более светлый пурпурный оттенок на ховере */
+        }
+
+        button:active {
+            background-color: #cc6699; /* Еще более светлый пурпурный при нажатии */
+        }
+
+        /* Мигающие линии на фоне */
+        .line {
+            position: absolute;
+            left: 50%;
+            width: 100%;
+            height: 6px; /* Увеличена толщина линии */
+            background-color: rgba(255, 255, 255, 0.5);
+            animation: lineAnim 3s ease-in-out infinite;
+        }
+
+        .line:nth-child(1) {
+            top: 10%;
+            animation-delay: 0s;
+        }
+
+        .line:nth-child(2) {
+            top: 25%;
+            animation-delay: 1s;
+        }
+
+        .line:nth-child(3) {
+            top: 40%;
+            animation-delay: 2s;
+        }
+
+        .line:nth-child(4) {
+            top: 55%;
+            animation-delay: 0s;
+        }
+
+        .line:nth-child(5) {
+            top: 70%;
+            animation-delay: 1s;
+        }
+
+        .line:nth-child(6) {
+            top: 85%;
+            animation-delay: 2s;
+        }
+
+        @keyframes lineAnim {
+            0% {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Размытие фона -->
+    <div class="sky-background"></div>
+
+    <!-- Текст "BIO JEDISE" -->
+    <div class="bio-text">
+        BIO JEDISE
+    </div>
+
+    <div class="buttons-container">
+        <div class="left-buttons">
+            <!-- Кнопка с ссылкой на Telegram -->
+            <a href="https://t.me/jedise" target="_blank">
+                <button>TG</button>
+            </a>
+            <!-- Кнопка с ссылкой на канал -->
+            <a href="https://t.me/jeglock" target="_blank">
+                <button>MY channel</button>
+            </a>
+        </div>
+        <div class="right-buttons">
+            <!-- Кнопка с ссылкой на "микро займ" -->
+            <a href="https://t.me/okkayaa" target="_blank">
+                <button>микро займ</button>
+            </a>
+            <!-- Кнопка с ссылкой на "my best friend" -->
+            <a href="https://t.me/h4nnaili" target="_blank">
+                <button>my best friend</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- Мигающие линии на фоне -->
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+</body>
+</html>
